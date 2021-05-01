@@ -1,5 +1,6 @@
+import React from 'react';
 import { Button, Navbar, Nav, NavDropdown, ButtonGroup, Container } from 'react-bootstrap';
-import logo from "../assets/logo.svg"
+import logo from '../assets/logo.svg';
 import './Navbar.scss';
 
 const Navigation = () => (
