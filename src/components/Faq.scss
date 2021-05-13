@@ -1,0 +1,25 @@
+@import '../variaveis';
+
+.faq {
+    background-color: $color-faq-bg;
+
+    div.card{
+    background-color: unset;
+
+    .card-header {
+        background-color: $color-faq-header;
+    }
+    
+    }
+
+    &-titulo {
+        font-size: 2.2rem;
+        font-weight: 300;
+        line-height: 1.2;
+
+        @media screen and (min-width: 992px) {
+            font-size: 3.5rem;
+        }
+    }
+}
+

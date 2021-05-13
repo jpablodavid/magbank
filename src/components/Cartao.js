@@ -22,7 +22,7 @@ const Cartao = () => (
 				<Row>
 					<Col xs={12} lg={6} className='mb-4'>
 						<Icone icone={faCreditCard}
-									size='2x'
+									size={2}
 									color='#f05656'
 									className='h5 text-muted'
 						>Crédito Pessoal</Icone>
@@ -31,7 +31,7 @@ const Cartao = () => (
 
 					<Col xs={12} lg={6} className='mb-4'>
 						<Icone icone={faMobile}
-									size='2x'
+									size={2}
 									color='#f05656'
 									className='h5 text-muted'
 						>APP</Icone>
@@ -40,7 +40,7 @@ const Cartao = () => (
 
 					<Col xs={12} lg={6} className='mb-4'>
 						<Icone icone={faShoppingCart}
-									size='2x'
+									size={2}
 									color='#f05656'
 									className='h5 text-muted'
 						>Pagamento Online</Icone>
@@ -49,7 +49,7 @@ const Cartao = () => (
 					
 					<Col xs={12} lg={6} className='mb-4'>
 						<Icone icone={faWallet}
-									size='2x'
+									size={2}
 									color='#f05656'
 									className='h5 text-muted'
 						>Pagamento Digital</Icone>

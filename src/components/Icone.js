@@ -3,18 +3,20 @@ import {Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 
 const Icone = ({
-    icone, 
-    size= '1x', 
-    color='#000', 
-    className='', 
-    children,
+	icone,
+	size = 1,
+	color = "#000",
+	className = "",
+	textClassName = "",
+	children,
+	onClick,
 }) => (
-	<Row>
-		<Col xs={2} className="d-flex justify-content-center">
-			<FontAwesomeIcon icon={icone} size={size} color={color} />
+	<Row className={`d-flex align-items-center ${className}`} onClick={onClick}>
+		<Col xs={size} className="d-flex justify-content-center">
+			<FontAwesomeIcon icon={icone} size={`${size}x`} color={color} />
 		</Col>
 
-		<Col xs={10} className={className}>
+		<Col xs={12 - size} className={textClassName}>
 			{children}
 		</Col>
 	</Row>

@@ -30,10 +30,10 @@ const Institutional = () => (
 						PageMaker including versions of Lorem Ipsum.
 					</p>
 
-					<Icone
+					<Icone 
 						icone={faMobileAlt}
-						size="2x"
-						color="#fff"
+						size={2} 
+						color="#fff" 
 						className="h5 text-light"
 					>
 						Sem fila e sem burocracia
@@ -41,7 +41,7 @@ const Institutional = () => (
 					<br />
 					<Icone
 						icone={faMobile}
-						size="2x"
+						size={2}
 						color="#fff"
 						className="h5 text-light"
 					>
@@ -50,7 +50,7 @@ const Institutional = () => (
 					<br />
 					<Icone
 						icone={faGlobe}
-						size="2x"
+						size={2}
 						color="#fff"
 						className="h5 text-light"
 					>
@@ -59,7 +59,7 @@ const Institutional = () => (
 					<br />
 					<Icone
 						icone={faShieldAlt}
-						size="2x"
+						size={2}
 						color="#fff"
 						className="h5 text-light"
 					>
