@@ -9,7 +9,7 @@ import {
 import Icone from './Icone';
 import './Institutional.scss';
 
-const Institutional = () => (
+const Institutional = ({ click }) => (
 	<section className="institutional text-light py-5">
 		<Container>
 			<Row>
@@ -66,7 +66,7 @@ const Institutional = () => (
 						Transações mais seguras
 					</Icone>
 
-					<Button className="mt-5" variant="outline-light">
+					<Button className="mt-5" variant="outline-light" onClick={ click } >
 						Abra sua conta
 					</Button>
 				</Col>

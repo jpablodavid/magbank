@@ -1,38 +1,62 @@
-@import '../variaveis';
+@import "../variaveis";
 
 .dashboard {
+	@media screen and(min-width: 992px) {
+		min-height: calc(100vh - 14.31rem);
+	}
 
-    @media screen and(min-width: 992px) {
-        min-height: calc(100vh - 14.31rem);
-    }
+	&__user-avatar {
+		position: relative;
+	}
 
-    &__user-avatar {
-        position: relative;
-    }
+	&__user-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-38%, -51%);
+	}
 
-    &__user-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-38%, -51%);
-    }
+	&__button {
+		color: $color-primary;
+		text-decoration: none;
+		margin-bottom: 0.5rem;
 
-    &__button {
-        color: $color-primary;
-        text-decoration: none;
+		&:hover,
+		&:focus,
+		&--active,
+		&--active:hover {
+			text-decoration: none;
+		}
 
-        &:hover, &--active {
-            background-color: $color-primary;
-            color: white;
-            text-decoration: none;
-        }
-    }
+		&:hover,
+		&--active,
+		&--active:hover {
+			color: #fff;
+		}
 
-    a.nav-item.nav-link.active {
-        color: #626262;
-    }
+		&:hover {
+			background-color: $color-muted;
+		}
+
+		&--active,
+		&--active:hover {
+			background-color: $color-primary;
+		}	
+	}
 
     a.nav-item.nav-link {
-        color: $color-primary;
-    }
+		color: $color-primary;
+	}
+
+	a.nav-item.nav-link.active {
+		color: $color-muted;
+	}
+	
+}
+
+a.dashboard__link,
+a.dashboard__link:active,
+a.dashboard__link:focus,
+a.dashboard__link:hover {
+  text-decoration: none;
 }

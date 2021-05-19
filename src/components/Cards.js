@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card, Button} from "react-bootstrap";
 
-const Cards = ({ posts, handleCreateAcc }) => (
+const Cards = ({ posts, click }) => (
 	<Container>
 		<Row>
 			{posts.map(({ id, image, title, excerpt, action }) => (
@@ -23,7 +23,7 @@ const Cards = ({ posts, handleCreateAcc }) => (
 				className="my-5 px-5 py-3"
 				variant="success"
 				size="lg"
-				onClick={handleCreateAcc}
+				onClick={click}
 			>
 				Abra sua conta
 			</Button>

@@ -1,43 +1,73 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import AccountModal from './components/AccountModal';
-import './App.scss';
+import React, { useState } from "react";
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch, Redirect,
+} from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import AccountModal from "./components/AccountModal";
+import "./App.scss";
 
-import Home from './views/Home';
+import Home from "./views/Home";
 import Login from "./views/Login";
-import Dashboard from './views/Dashboard';
+import Dashboard from "./views/Dashboard";
 
+const PrivateRoute = ({ children, logged, ...rest }) => (
+	<Route 
+		{ ...rest }
+		render={() => (logged ? children : <Redirect to='/login' />)
+	    } 
+	/>
+);
 
 const App = () => {
+	const [showModal, setShowModal] = useState(false);
+	const [account, setAccount] = useState();
+	const [name, setName] = useState();
+	const isLogged = name && account;
 
-  const [showModal, setShowModal] = useState(false);
+	const fakeAuth = {
+		login(name, account, cb) {
+			setName(name);
+			setAccount(account)
+			setTimeout(cb, 100);
+		},
+		logout(cb) {
+			setName();
+			setAccount();
+			setTimeout(cb, 100);
+		}
 
-  return (
+	};
+
+	return (
 		<Router>
-			<Navbar handleCreateAcc={() => setShowModal(true)} />
-		
+			<Navbar
+				handleCreateAcc={() => setShowModal(true)}
+				logged={isLogged}
+				auth={fakeAuth}
+			/>
+
 			<Switch>
-				<Router path='/' exact>
+				<Route path="/login">
+					<Login auth={fakeAuth} />
+				</Route>
+
+				<PrivateRoute path="/dashboard" logged={isLogged}>
+					<Dashboard name={name} account={account} />
+				</PrivateRoute>
+
+				<Route path="/">
 					<Home handleCreateAcc={() => setShowModal(true)} />
-				</Router>
-
-				<Router path='/login'>
-					<Login />
-				</Router>
-
-				<Router path='/dashboard'>
-					<Dashboard />
-				</Router>
+				</Route>
 			</Switch>
 
 			<Footer />
 
-			<AccountModal show={showModal} handleClose={() => setShowModal(false)} />
+			<AccountModal show={showModal} handleClose={() => setShowModal(false)} auth={fakeAuth} />
 		</Router>
 	);
 };
-
 
 export default App;

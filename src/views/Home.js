@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import Hero from "../components/Hero";
 import Cartao from "../components/Cartao";
 import Cards from "../components/Cards";
@@ -8,20 +8,17 @@ import Faq from "../components/Faq";
 import posts from "../data/posts";
 
 const Home = ({ handleCreateAcc }) => (
-    <>
+	<>
+		<Hero click={handleCreateAcc} />
 
-        <Hero />
+		<Cartao />
 
-        <Cartao />
+		<Cards posts={posts} click={handleCreateAcc} />
 
-        <Cards posts={posts} onClick={ handleCreateAcc }/>
+		<Institutional click={handleCreateAcc} />
 
-        <Institutional />
-
-        <Faq />
-
-    </>
-
+		<Faq />
+	</>
 );
 
 export default Home;
